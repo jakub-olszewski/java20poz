@@ -78,6 +78,11 @@ public class NodeImpl<T> implements Node<T>{
         return child;
     }
 
+    public String toString() {
+        return data.toString();
+    }
+
+
     @Override
     public Node<T> removeChild(int i) {
         return null;
@@ -95,7 +100,7 @@ public class NodeImpl<T> implements Node<T>{
 
     @Override
     public List<Node<T>> getChildren() {
-        return null;
+        return children;
     }
 
     @Override
