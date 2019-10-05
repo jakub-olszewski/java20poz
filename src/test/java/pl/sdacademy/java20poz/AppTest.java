@@ -1,4 +1,4 @@
-package pl.sdacademy.java16poz;
+package pl.sdacademy.java20poz;
 
 import org.junit.Test;
 
