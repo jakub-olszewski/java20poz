@@ -22,6 +22,25 @@ public abstract class AlgorithmSort {
     @Override
     public String toString(){
         // wypisz po przecinku za pomocą pętli liczby z tablicy
-        return null;
+        // StringBuilder
+        StringBuilder result = new StringBuilder();
+
+        // pętla dopisywanie do result liczb
+        for(int number: numbers){
+            result.append(number).append(" |");
+        }
+
+        return result.toString();
+    }
+
+    /**
+     * Metoda zamienia wartości w indeksach i j
+     * @param i indeks
+     * @param j indeks
+     */
+    protected void swap(int i, int j) {
+        int temp = numbers[i];
+        numbers[i] = numbers[j];
+        numbers[j] = temp;
     }
 }

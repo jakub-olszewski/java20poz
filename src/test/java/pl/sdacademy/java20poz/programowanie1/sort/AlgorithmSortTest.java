@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AlgorithmSortTest {
@@ -18,8 +19,8 @@ class AlgorithmSortTest {
     void setUp() {
         // kod wykonuje się przed każdym testem
         // zainicjować liczby
-        numbers = initNumbers(1,3,80,5,67,3,2,57,32,79);
-        sortedNumbers = initNumbers(1,2,3,3,5,32,57,67,79,80);
+        numbers = initNumbers(1, 3, 80, 5, 67, 3, 2, 57, 32, 79);
+        sortedNumbers = initNumbers(1, 2, 3, 3, 5, 32, 57, 67, 79, 80);
     }
 
     private int[] initNumbers(int... numbers) {
@@ -37,12 +38,31 @@ class AlgorithmSortTest {
         algorithmSort = new BubbleSort();
         algorithmSort.init(numbers);
 
+        System.out.println("Before: " + algorithmSort);
+
         // when
         algorithmSort.sort();
+        System.out.println("Sorting");
+        System.out.println("After: " + algorithmSort);
 
         // then
         algorithmSort.get();
         // wypisz liczby
-        System.out.println(algorithmSort);
+        assertTable("Nie posortowane poprawnie!",numbers,sortedNumbers);
+    }
+
+    /**
+     * Metoda asertuje nam tablice
+     *
+     * @param message wiadomosc asercji
+     * @param table1  tablica wejsciowa 1
+     * @param table2  tablica wejsciowa 2 ktora porownujemy
+     */
+    protected void assertTable(String message, int[] table1, int[] table2) {
+        assertTrue(message, table1.length == table2.length);
+        // wersja pętla
+        for (int i = 0; i < table1.length; i++) {
+            assertTrue(message + " "+table1[i]+" != "+table2[i], table1[i] == table2[i]);
+        }
     }
 }
