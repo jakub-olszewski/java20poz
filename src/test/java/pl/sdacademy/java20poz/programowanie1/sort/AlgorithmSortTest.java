@@ -53,13 +53,30 @@ class AlgorithmSortTest {
 
     @Test
     void selectionSortTest() {
+        algorithmTest(new SelectionSort());
+    }
+
+    @Test
+    void insertionSortTest() {
+        algorithmTest(new InsertionSort());
+    }
+
+    @Test
+    void quickSortTest() {
+        algorithmTest(new QuickSort());
+    }
+
+    @Test
+    void mergeSortTest() {
+        algorithmTest(new MergeSort());
+    }
+
+    private void algorithmTest(AlgorithmSort algorithmSort) {
         // zainicjować algorytm sortujący
         // wstawić liczby 'numbers'
         // posortować
         // zweryfikować czy są takie jak w 'sortedNumbers'
-
         // given
-        algorithmSort = new SelectionSort();
         algorithmSort.init(numbers);
 
         System.out.println("Before: " + algorithmSort);
