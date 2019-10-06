@@ -1,5 +1,7 @@
 package pl.sdacademy.java20poz.programowanie1.sort;
 
+import java.util.Arrays;
+
 public abstract class AlgorithmSort {
 
     protected int[] numbers;
@@ -42,5 +44,13 @@ public abstract class AlgorithmSort {
         int temp = numbers[i];
         numbers[i] = numbers[j];
         numbers[j] = temp;
+    }
+
+    public void print(){
+        //wersja bez stream
+        for(int number: numbers){
+            System.out.print("| "+number);
+        }
+        System.out.println("|");
     }
 }
