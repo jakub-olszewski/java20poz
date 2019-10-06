@@ -51,6 +51,30 @@ class AlgorithmSortTest {
         assertTable("Nie posortowane poprawnie!",numbers,sortedNumbers);
     }
 
+    @Test
+    void selectionSortTest() {
+        // zainicjować algorytm sortujący
+        // wstawić liczby 'numbers'
+        // posortować
+        // zweryfikować czy są takie jak w 'sortedNumbers'
+
+        // given
+        algorithmSort = new SelectionSort();
+        algorithmSort.init(numbers);
+
+        System.out.println("Before: " + algorithmSort);
+
+        // when
+        algorithmSort.sort();
+        System.out.println("Sorting");
+        System.out.println("After: " + algorithmSort);
+
+        // then
+        algorithmSort.get();
+        // wypisz liczby
+        assertTable("Nie posortowane poprawnie!",numbers,sortedNumbers);
+    }
+
     /**
      * Metoda asertuje nam tablice
      *
