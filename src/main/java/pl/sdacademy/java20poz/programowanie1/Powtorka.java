@@ -33,7 +33,7 @@ public class Powtorka {
         telewizor.ustawKanal(5);
 //
         PudelkoUniwersalne<Frytki> pudelkoUniwersalne = new PudelkoUniwersalne(frytki);
-        //pudelkoUniwersalne.pobierzZawartosc();
+        pudelkoUniwersalne.pobierzZawartosc();
 
         Frytki frytkiZPudelkaUniwersalnego = pudelkoUniwersalne.pobierzZawartosc();
 
